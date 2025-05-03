@@ -1,0 +1,15 @@
+.title KiCad schematic
+.include "C:/Users/jalbe/OneDrive - Instituto Superior de Engenharia do Porto/3ano/2semestre/SISTCA/Trabalho_SISTCA/Amplificador/Kicad_Amplificador/LM386.lib"
+.param pos1
+.model __RV1 potentiometer( r=10k position=pos1 )
+.tran 5m 50m 45m 0
+C5 Net-_U1-BYPASS_ 0 100u
+C4 Net-_C4-Pad1_ OUTPUT 220u
+XU1 unconnected-_U1-GAIN-Pad1_ 0 Net-_U1-+_ 0 Net-_C4-Pad1_ Net-_U1-V+_ Net-_U1-BYPASS_ unconnected-_U1-GAIN-Pad8_ LM386_TI
+LS1 OUTPUT 0 l="8.0"
+C1 Net-_U1-V+_ 0 220u
+V1 Net-_U1-V+_ 0 DC 6 
+V2 INPUT 0 DC 0 SIN( 0 0.1 1k 0 0 0 ) AC 1  
+C2 INPUT Net-_C2-Pad2_ 10u
+ARV1 Net-_U1-+_ Net-_C2-Pad2_ 0 __RV1
+.end
